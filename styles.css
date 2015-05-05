@@ -1,0 +1,179 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: Calibri;
+    color: #556;
+}
+
+div[full] {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    vertical-align: middle;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+div[full] img {
+    vertical-align: middle;
+    width: 70%;
+    max-width: 1000px;
+}
+
+img[thumb] {
+    cursor: pointer;
+}
+
+div[fakeMenu] {
+    height: 50px;
+}
+
+div[menu] {
+    clear: both;
+    margin: 0px;
+    padding: 10px;
+    position: fixed;
+    box-sizing: border-box;
+    background-color: #668;
+    color: #DDE;
+    text-align: center;
+    width: 100%;
+    height: 60px;
+    text-align: center;
+}
+
+div[menu] > div {
+    display: inline-block;
+    width: 100%;
+    max-width: 1000px;
+    min-width: 340px;
+}
+
+div[menu] ul {
+    width: 100%;
+    display: inline;
+    text-align: center;
+    padding: 0px;
+    vertical-align:middle;
+}
+
+div[menu] ul > * {
+    margin: 0px;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 24%;
+    height: 40px;
+}
+
+div[menu] ul li {
+    padding-top: 10px;
+    text-align: center;
+    border: 1px solid #DDE;
+    cursor: pointer;
+}
+
+div[menu] ul li.selected {
+    background-color: #DDE;
+    color: #668;
+}
+
+div[menu] ul li a {
+    color: #DDE;
+    text-style: none;
+    text-decoration: none;
+    height: 100%;
+}
+
+section {
+    z-index: 0px;
+     /* jeitinho para funcionar anchor com header fixed */
+    padding-top: 50px;
+    margin-top: -50px;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    min-height: 300px;
+}
+
+section::before {    
+    background-repeat: repeat-x;
+    background-position: center; 
+    background-image: url('images/sup-limit.png');
+    width: 100%;
+    height: 30px;
+    z-index: 99999;
+    display: block;
+    content: "";
+}
+
+section::after {    
+    background-repeat: repeat-x;
+    background-position: center; 
+    background-image: url('images/inf-limit.png');
+    width: 100%;
+    height: 30px;
+    z-index: 99999;
+    display: block;
+    content: "";
+}
+
+section > div[background] {    
+    background-color: rgba(255, 255, 255, .8);
+}
+
+section > div[background] > div {    
+    display: inline-block;
+    max-width: 1000px;
+    width: 100%;
+    min-height: 300px;
+}
+
+section div[content] {
+    padding: 10px;
+    text-align: justify;
+}
+
+    section div[content] > img {
+        max-width: 33%;
+        width: 200px;
+        padding: 20px;
+    }
+
+    section div[content] > img:nth-of-type(odd) {
+        float: right;
+        clear: both;
+    }
+
+    section div[content] > img:nth-of-type(even) {
+        float: left;
+        clear: both;
+    }
+
+    section div[content] > img[invert]:nth-of-type(odd) {
+        float: left;
+        clear: both;
+    }
+
+    section div[content] > img[invert]:nth-of-type(even) {
+        float: right;
+        clear: both;
+    }
+
+    section div h1 {
+        font-size: 2em;
+    }
+
+    section div h2 {
+        font-size: 1.33em;
+    }
+
+    section div h3 {
+        font-size: 1em;
+    }
+
+div[rights] {
+    text-align: center;
+    margin-bottom: 15px;
+}
