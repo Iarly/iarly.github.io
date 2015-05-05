@@ -60,6 +60,14 @@ body {
 
 }
 
+#projects div[content] > p:nth-of-type(2) {
+    min-height: 130px;
+}
+
+#projects div[content] > p:nth-of-type(4) {
+    min-height: 140px;
+}
+
 #projects div[content] > p {
-    min-height: 50px;
+    min-height: 100px;
 }
