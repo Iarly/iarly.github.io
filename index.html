@@ -18,6 +18,15 @@
 
 <body>
 
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.3&appId=248340481947541";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
     <div menu>
         <div>
             <ul>
@@ -100,6 +109,15 @@
                         A ferramenta gera um álbum protegido por senha e data de expiração, que é encaminhado para os formandos.
                         <br><b>Data:</b> 2005
                     </p>
+
+                    <span style="text-align: left;">
+                        <div class="fb-like" data-href="https://iarly.github.io/" data-layout="button" data-action="recommend" data-show-faces="true" data-share="true"></div>
+                    </span>
+                    <span style="text-align: right; float: right;">
+                        <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: pt_BR</script>
+                        <script type="IN/Share" data-url="http://iarly.github.io/" data-counter="right"></script>
+                    <span>
+
                 </div>
             </div>
         </div>
@@ -140,6 +158,14 @@
                         Clique <a href="Curriculo_Iarly.pdf" target="_blank">aqui</a> para fazer o download do currículo completo.
                     </p>
 
+                    <span style="text-align: left;">
+                        <div class="fb-like" data-href="https://iarly.github.io/" data-layout="button" data-action="recommend" data-show-faces="true" data-share="true"></div>
+                    </span>
+                    <span style="text-align: right; float: right;">
+                        <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: pt_BR</script>
+                        <script type="IN/Share" data-url="http://iarly.github.io/" data-counter="right"></script>
+                    <span>
+
                 </div>    
 
             </div>
@@ -172,7 +198,7 @@
         Iarly Lana Lins (c) Todos os direitos reservados
     </div>
 
-    <div full id="fullscreen_image">
+    <div full id="fullscreen_image" style="display: none">
         <img>
         <p>Clique em qualquer lugar para fechar</p>
     </div>

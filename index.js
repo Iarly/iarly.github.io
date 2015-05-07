@@ -1,11 +1,23 @@
 (function () {
 
+    var viewport = {
+        width : Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
+        height : Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+    }
+
+    doSetMinHeight();
     doAnchors();
     doThumbs();
     doMap();
     doMyLocation();
 
-    function whereIam() {
+    function doSetMinHeight() {
+        iterate(document.querySelectorAll("div[background]"), function (section) {
+            section.style.minHeight = viewport.height + "px";
+        });
+    }
+
+    function whereAmI() {
         var now = new Date();
         var hour = now.getHours();
 
@@ -28,7 +40,7 @@
     }
 
     function doMyLocation() {
-        document.getElementById("myLocation").innerHTML = whereIam().text;        
+        document.getElementById("myLocation").innerHTML = whereAmI().text;        
     }
 
     function doMap() {
@@ -40,6 +52,7 @@
         function initialize() {
             directionsDisplay = new google.maps.DirectionsRenderer();
             var mapOptions = {
+                draggable: false,
                 zoom: 15,
                 center: new google.maps.LatLng(-34.397, 150.644)
             };
@@ -67,7 +80,7 @@
 
         function calcRoute() {
             var start = actualPosition;
-            var end = whereIam().query;
+            var end = whereAmI().query;
             var request = {
                 origin: start,
                 destination: end,
@@ -131,7 +144,16 @@
                     var anchor = document.getElementById(anchors[i]);
                     if (!anchor) continue;
                     
-                    var distance = Math.abs(y - anchor.offsetTop);
+                    var relativeDistance = y - anchor.offsetTop;
+                    var distance = Math.abs(relativeDistance);
+
+                    // Se o objeto ancorado estiver vindo de baixo, o efeito de opacidade deve ser maior...
+                    if (relativeDistance < 0)
+                        anchor.style.opacity = 1 - distance / viewport.height * 1.2;
+                    // De forma contrária, se objeto vier de cima, ele deve demorar mais para sumir, uma vez
+                    // que o usuário ainda poderá estar lendo o conteúdo.
+                    else 
+                        anchor.style.opacity = 1 - distance / viewport.height / 10;
 
                     if (anchorY > distance) {
                         anchorY = distance;

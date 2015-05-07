@@ -31,6 +31,7 @@ div[fakeMenu] {
 }
 
 div[menu] {
+    z-index: 9999;
     clear: both;
     margin: 0px;
     padding: 10px;
@@ -97,7 +98,7 @@ section {
     min-height: 300px;
 }
 
-section::before {    
+section:not(nth-of-type(1))::before {    
     background-repeat: repeat-x;
     background-position: center; 
     background-image: url('images/sup-limit.png');
